@@ -1,0 +1,87 @@
+.cage{
+  background:  rgba(35, 1, 31, .1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem;
+  justify-content: space-around;
+
+}
+
+.card{
+  display: flex;
+  background: rgba(58, 7, 52, 0.3);
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  padding: 0.5rem;
+  width: fit-content;
+  font-size: 0.8rem;
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  border-top-left-radius: 3rem;
+  transition:0.5s;
+}
+.card:hover {
+  opacity: .7;
+  border: solid black 1px;
+
+}
+
+.card h2{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  
+}
+.bot{
+  align-content: end;
+  display: flex;
+  flex-direction: row;
+}
+.name{
+  font-size: 2.5rem;
+  color: rgb(4, 236, 0);
+  -webkit-text-stroke: 1.5px rgb(12, 33, 1);
+}
+.gender h2{
+  font-size: 1.8rem;
+  color: rgb(255, 0, 0); 
+  -webkit-text-stroke: 1.5px rgb(33, 1, 1);
+}
+.species h2{
+  font-size: 1.8rem;
+  color: rgb(255, 0, 0);
+  -webkit-text-stroke: 1.5px rgb(38, 1, 1);
+}
+.image{
+  height:12rem;
+  width:13rem;
+  display: flex;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  border-bottom-right-radius:3rem;
+  border-bottom-left-radius: 3rem;
+  
+}
+
+
+.cage .button{
+
+  display: flex;
+  align-self: self-end;
+}
+.button button {
+  background-color: rgba(35, 1, 31, .1);
+  color: aliceblue;
+}
+
+.button button:hover{
+  background-color: wheat;
+  color: #1C0119;
+}
