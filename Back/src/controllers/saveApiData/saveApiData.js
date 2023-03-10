@@ -7,7 +7,7 @@ try{
     let i = 1;
 
     let character= [];
-    while(i<50){
+    while(i<101){
 let apiData = await axios(`https://rickandmortyapi.com/api/character/${i}`);
     character.push(apiData)
     i++
