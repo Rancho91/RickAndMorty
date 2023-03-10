@@ -1,13 +1,13 @@
 const axios = require('axios')
 const {Character}  = require('../../DB_connection');
 
-console.log(Character)
+
 const  getApiData = async () =>{
 try{
     let i = 1;
 
     let character= [];
-    while(i<6){
+    while(i<50){
 let apiData = await axios(`https://rickandmortyapi.com/api/character/${i}`);
     character.push(apiData)
     i++
@@ -38,20 +38,9 @@ return allCharacters
 const saveApiData = async () =>{
  try {
     
-    const allCharacters = await getApiData()
-    // const createCharacter = await Character.bulkCreate(allCharacters) // maneja arra de objetos y puede crear todos juntos
-    const {id,name,status,species,gender,origin,image} = allCharacters[1]
-
-    const newCharacter =await Character.create({
-        id,
-        name,
-        status,
-        species,
-        gender,
-        origin,
-        image,
-    })
-   console.log(newCharacter)
+    const allCharacters = await getApiData()    
+    const newCharacter =    await Character.bulkCreate(allCharacters);
+   return newCharacter
  } catch (error) {
     return {error: error.message}
  }

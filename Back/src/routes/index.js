@@ -9,7 +9,7 @@ router.get("/onsearch/:id", getCharById);
 router.get("/detail/:detailId", getCharDetail);
 router.get('/allCharacters', async(req,res)=>{
     try {
-        allCharacters=getAllChars()
+      const allCharacters= await getAllChars()
         res.status(200).json(allCharacters)
     } catch (error) {
         res.status(404).json('error')

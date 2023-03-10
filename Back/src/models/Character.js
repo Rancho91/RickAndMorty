@@ -1,35 +1,43 @@
 const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize) => {
-   sequelize.define('Character', {
-      id:{
+function characterModel(database) {
+   database.define(
+     "Character",
+     {
+       id: {
          type: DataTypes.INTEGER,
          allowNull: false,
          primaryKey: true,
-      },
-      name:{
+         autoIncrement: true,
+       },
+       name: {
          type: DataTypes.STRING,
          allowNull: false,
-      },
-      status:{
-         type: DataTypes.ENUM('Alive', 'Dead', 'Unknow'),
-         allowNull:false
-      },
-      species:{
+       },
+       status: {
+         type: DataTypes.ENUM("Alive", "Dead", "unknown"),
+         allowNull: false,
+       },
+       species: {
          type: DataTypes.STRING,
          allowNull: false,
-      },
-      gender:{
-         type: DataTypes.ENUM('Female', 'Male','genderless','unknow'),
+       },
+       gender: {
+         type: DataTypes.ENUM("Female", "Male", "Genderless", "unknown"),
          allowNull: false,
-      },
-      origin:{
+       },
+       origin: {
          type: DataTypes.STRING,
          allowNull: false,
-      },
-      image:{
+       },
+       image: {
          type: DataTypes.STRING,
          allowNull: false,
-      }
-   });
-};
+       },
+     },
+     { timestamps: false }
+   );
+ }
+ 
+ module.exports = { characterModel };
+ 
